@@ -1,5 +1,5 @@
 {% set name = "harlequin-postgres" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/harlequin_postgres-{{ version }}.tar.gz
-  sha256: cc1b5582a05459a56339d7165c05f32466afb50f4eef18074331b0d0c38e9c15
+  sha256: d72f12df3e994edf8f660ef9681fdb2a710f740b6a8d9d88ab206d50193c2050
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - poetry-core
     - pip
   run:
+    - psycopg >=3.2.0,<4.0.0
     - python >=3.8.1,<4.0
     - harlequin >=1.20.0,<2.0.0
     - psycopg2-binary >=2.9.9,<3.0.0
