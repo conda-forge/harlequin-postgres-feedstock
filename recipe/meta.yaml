@@ -1,5 +1,5 @@
 {% set name = "harlequin-postgres" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/harlequin_postgres-{{ version }}.tar.gz
-  sha256: f544b469a5cfd85f9454cf69638dcaa67074e4a0b4fee0f1ae964060e27e451d
+  sha256: bbfc7c271d727d4b454985faa32bce64999d3d66da3a4167dce19076ac722bc0
 
 build:
   noarch: python
