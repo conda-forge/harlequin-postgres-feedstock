@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: harlequin-postgres
-  version: 1.3.0
+  version: 1.3.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/harlequin_postgres-${{ version }}.tar.gz
-  sha256: d3532594693c745796b5ba4434218662ce3f9e5abb68b2e4159a825c62eb378b
+  sha256: 25dcb73e97cdfb17c3bcfdc3146418a98ff11ce68f6a51fb1b25322eac9d5223
 
 build:
   number: 0
@@ -24,11 +24,9 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
+    - psycopg-pool
     - psycopg >=3.2,<4
-    - psycopg-pool >=3.2.2,<4.0.0
     - harlequin >=1.25,<3
-    - psycopg2-binary >=2.9.9,<3.0.0
-
 tests:
   - python:
       python_version: ${{ python_min }}.*
