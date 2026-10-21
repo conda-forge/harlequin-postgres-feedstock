@@ -1,15 +1,14 @@
 schema_version: 1
 
 context:
-  name: harlequin-postgres
   version: 1.5.1
 
 package:
-  name: ${{ name|lower }}
+  name: harlequin-postgres
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/harlequin_postgres-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-${{ version }}.tar.gz
   sha256: d159db9bf3c57a7ca0f2eacd0cf991332043ef8eed843d436ddbfc0c6c3b8fec
 
 build:
@@ -29,7 +28,9 @@ requirements:
     - harlequin >=2.11,<3
 tests:
   - python:
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - harlequin_postgres
 
@@ -40,6 +41,5 @@ about:
   homepage: https://github.com/tconbeer/harlequin-postgres
 
 extra:
-  feedstock-name: harlequin-postgres
   recipe-maintainers:
     - conda-forge/harlequin
