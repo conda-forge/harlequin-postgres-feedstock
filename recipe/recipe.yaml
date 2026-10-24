@@ -23,6 +23,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
+    - psycopg-pool
     - psycopg >=3.2,<4
     - harlequin >=2.11,<3
 tests:
